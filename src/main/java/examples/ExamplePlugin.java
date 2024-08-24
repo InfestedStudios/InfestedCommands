@@ -1,7 +1,6 @@
 package examples;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.infestedstudios.commands.ExampleCommand;
 import org.infestedstudios.commands.manager.CommandManager;
 
 public class ExamplePlugin extends JavaPlugin {
