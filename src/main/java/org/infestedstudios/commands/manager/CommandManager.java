@@ -5,6 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.infestedstudios.commands.BaseCommand;
 import org.infestedstudios.commands.annotations.CommandAlias;
+import org.infestedstudios.commands.completions.CommandCompletions;
 import org.infestedstudios.commands.handler.AsyncTabCompleteHandler;
 
 import java.util.HashMap;
@@ -12,12 +13,13 @@ import java.util.Map;
 
 public class CommandManager {
 
-    private JavaPlugin plugin;  // Use JavaPlugin to access getCommand()
+    private JavaPlugin plugin;
     private boolean asyncTabCompleteAvailable = false;
     private final Map<String, BaseCommand> registeredCommands = new HashMap<>();
+    private final CommandCompletions commandCompletions = new CommandCompletions();
 
     // Method to initialize the CommandManager with the plugin instance
-    public void init(JavaPlugin plugin) {  // Accept JavaPlugin directly
+    public void init(JavaPlugin plugin) {
         this.plugin = plugin;
 
         // Check for Async Tab Completion support
@@ -62,6 +64,11 @@ public class CommandManager {
                 pluginCommand.setTabCompleter(null);
             }
         }
+    }
+
+    // Accessor for CommandCompletions
+    public CommandCompletions getCommandCompletions() {
+        return commandCompletions;
     }
 
     public boolean isAsyncTabCompleteAvailable() {
