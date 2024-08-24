@@ -11,7 +11,6 @@ public class ExamplePlugin extends JavaPlugin {
     public void onEnable() {
         commandManager = new CommandManager();
         commandManager.init(this);
-
         // Register the ExampleCommand
         commandManager.registerCommands(
                 new ExampleCommand()
