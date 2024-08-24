@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'org.infestedstudios'
-version = 'v0.1.0'
+version = 'v0.1.1'
 
 repositories {
     mavenCentral()
